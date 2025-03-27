@@ -56,9 +56,6 @@ AQUILES combina inteligencia artificial y tecnología avanzada para potenciar la
 ## 🏆 Reconocimientos y Premios
 
 - **ONIET 2025**: Olimpiadas Nacionales de Innovación y Emprendimiento Tecnológico
-- **Innovar 2024**: Concurso Nacional de Innovaciones
-- **Premios STEM 2024**: Reconocimiento a proyectos educativos en ciencia y tecnología
-- **Feria de Ciencias Provincial**: Primer premio categoría Tecnología Aplicada
 
 ## 🌐 Características del Sitio Web
 
