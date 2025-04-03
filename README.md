@@ -11,9 +11,12 @@
   [![Mobile App](https://img.shields.io/badge/App-Google_Play-green?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com)
 </div>
 
+## 🌐 Accede a la Página Web
+🔗 [Visita Aquiles Web](https://misaacastillo.github.io/aquiles_web/)
+
 ## 📋 Descripción
 
-El Proyecto Aquiles es un exoesqueleto de asistencia motora de última generación desarrollado en Argentina por estudiantes y docentes de la Escuela de Educación Secundaria Técnica (EEST) Nº7 "Taller Regional Quilmes" IMPA. Este repositorio contiene el código fuente completo del sitio web oficial que presenta el proyecto, sus características, beneficios y formas de contacto.
+El Proyecto Aquiles es un exoesqueleto de asistencia motora de última generación desarrollado en Argentina por estudiantes de la Escuela de Educación Secundaria Técnica (EEST) Nº7 "Taller Regional Quilmes" IMPA. Este repositorio contiene el código fuente completo del sitio web oficial que presenta el proyecto, sus características, beneficios y formas de contacto.
 
 AQUILES combina inteligencia artificial y tecnología avanzada para potenciar la movilidad y reducir el esfuerzo al caminar. Diseñado para adaptarse a diferentes tipos de usuarios, brinda un soporte eficiente que optimiza cada movimiento y mejora la experiencia de desplazamiento.
 
@@ -56,6 +59,12 @@ AQUILES combina inteligencia artificial y tecnología avanzada para potenciar la
 ## 🏆 Reconocimientos y Premios
 
 - **ONIET 2025**: Olimpiadas Nacionales de Innovación y Emprendimiento Tecnológico
+
+## Preview Desktop
+<img width="1510" alt="Image" src="https://github.com/user-attachments/assets/c455cdf1-5360-4de4-825e-e503f0fa5844" />
+
+## Preview Mobile
+![Image](https://github.com/user-attachments/assets/95420d54-a741-4684-bf8f-64e45ac6f084)
 
 ## 🌐 Características del Sitio Web
 
