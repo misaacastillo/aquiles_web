@@ -1,4 +1,4 @@
-/* Variables de colores basadas en la paleta proporcionada */
+/* Colores  */
 :root {
   --color-white: #ffffff;
   --color-light-teal: #8ccbd5;
@@ -2289,6 +2289,7 @@ img {
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
+    align-content: center
   }
 
   .footer-social {
