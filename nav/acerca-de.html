@@ -31,10 +31,35 @@
             color: var(--color-white);
             border-radius: 50%;
             transition: background-color 0.3s ease;
+            position: relative;
         }
         
         .member-social a:hover {
             background-color: var(--color-dark-teal);
+        }
+
+        /* Add tooltip styles */
+        .member-social a[href^="mailto:"]::before {
+            content: "Copy";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--color-dark-teal);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            pointer-events: none;
+        }
+
+        .member-social a[href^="mailto:"]:hover::before {
+            opacity: 1;
+            visibility: visible;
         }
         
         @media (max-width: 768px) {
@@ -47,6 +72,16 @@
             .team-grid {
                 grid-template-columns: 1fr;
             }
+        }
+        .copy-tooltip {
+            position: fixed;
+            background-color: var(--color-dark-teal);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            z-index: 1000;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -109,7 +144,7 @@
                 <div class="about-card">
                     <div class="about-content">
                         <div class="about-image">
-                            <img src="../med/3.jpeg" alt="Logo Proyecto Aquiles">
+                            <img src="../med/5.png" alt="Logo Proyecto Aquiles">
                         </div>
                         <div class="about-text">
                             <h2>Nuestra Historia</h2>
@@ -133,7 +168,7 @@
                         <p class="member-position">Cargo / Posición</p>
                         <p class="member-bio">Breve descripción sobre esta persona y su rol en Proyecto Aquiles.</p>
                         <div class="member-social">
-                            <a href="misacastillo08@gmail.com"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:misacastillo08@gmail.com"><i class="fas fa-envelope"></i></a>
                             <a href="https://github.com/misaacastillo"><i class="fab fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/misael-castillo-0a52a1314/"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://www.instagram.com/misaacas/"><i class="fab fa-instagram"></i></a>
@@ -145,7 +180,7 @@
                         <p class="member-position">Cargo / Posición</p>
                         <p class="member-bio">Breve descripción sobre esta persona y su rol en Proyecto Aquiles.</p>
                         <div class="member-social">
-                            <a href="alexisrodrigolin@gmail.com"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:alexisrodrigolin@gmail.com"><i class="fas fa-envelope"></i></a>
                             <a href="https://github.com/alexisrodrigolin"><i class="fab fa-github"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://www.instagram.com/alexisrodrigolin/"><i class="fab fa-instagram"></i></a>
@@ -157,8 +192,8 @@
                         <p class="member-position">Cargo / Posición</p>
                         <p class="member-bio">Breve descripción sobre esta persona y su rol en Proyecto Aquiles.</p>
                         <div class="member-social">
-                            <a href="montillajuanignacio@gmail.com"><i class="fas fa-envelope"></i></a>
-                            <a href="github.com/monti3"><i class="fab fa-github"></i></a>
+                            <a href="mailto:montillajuanignacio@gmail.com"><i class="fas fa-envelope"></i></a>
+                            <a href="https://github.com/Monti3"><i class="fab fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/juan-ignacio-montilla-b98064358/"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://www.instagram.com/montillajuanignacio/"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -169,7 +204,7 @@
                         <p class="member-position">Cargo / Posición</p>
                         <p class="member-bio">Breve descripción sobre esta persona y su rol en Proyecto Aquiles.</p>
                         <div class="member-social">
-                            <a href="sanfran120771@gmail.com"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:sanfran120771@gmail.com"><i class="fas fa-envelope"></i></a>
                             <a href="https://github.com/ZaCoso"><i class="fab fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/santiago-zacar%C3%ADas-3a3978319/"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://www.instagram.com/santizaca_/"><i class="fab fa-instagram"></i></a>
@@ -181,7 +216,7 @@
                         <p class="member-position">Cargo / Posición</p>
                         <p class="member-bio">Breve descripción sobre esta persona y su rol en Proyecto Aquiles.</p>
                         <div class="member-social">
-                            <a href="juancruz.isola2209@gmail.com"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:juancruz.isola2209@gmail.com"><i class="fas fa-envelope"></i></a>
                             <a href="https://github.com/juanisola"><i class="fab fa-github"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://www.instagram.com/juanisola_/"><i class="fab fa-instagram"></i></a>
@@ -193,7 +228,7 @@
                         <p class="member-position">Cargo / Posición</p>
                         <p class="member-bio">Breve descripción sobre esta persona y su rol en Proyecto Aquiles.</p>
                         <div class="member-social">
-                            <a href="trillocontardimauricio@gmail.com"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:trillocontardimauricio@gmail.com"><i class="fas fa-envelope"></i></a>
                             <a href="https://github.com/MauricioTrillo"><i class="fab fa-github"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://www.instagram.com/mauritrillo_/"><i class="fab fa-instagram"></i></a>
@@ -278,12 +313,11 @@
                         <span>Proyecto Aquiles</span>
                     </div>
                     
-                <div class="eslogan">   
-                    <p>Revolucionando la movilidad humana</p>
+                    <div class="eslogan">   
+                        <p>Revolucionando la movilidad humana</p>
+                    </div>
                 </div>
-                
-                </div>
-
+    
                 <div class="footer-links">
                     <h3>Accesos Rápidos</h3>
                     <ul>
@@ -294,7 +328,7 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-
+    
                 <div class="footer-contact">
                     <h3>Contacto</h3>
                     <ul>
@@ -303,19 +337,17 @@
                         <li><i class="fas fa-envelope"></i>projectaquiles@gmail.com</li>
                     </ul>
                 </div>
-
+    
                 <div class="footer-social">
                     <h3>Síguenos</h3>
                     <div class="social-icons">
-                  
-         
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/aquiles.project/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://youtube.com/@aquilesproject?si=hjGjSXgWbFqAbJPA" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
-
+    
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year"></span> Proyecto Aquiles. Todos los derechos reservados.</p>
             </div>
@@ -324,6 +356,43 @@
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        // Function to copy text to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show feedback to user
+                const tooltip = document.createElement('div');
+                tooltip.className = 'copy-tooltip';
+                tooltip.textContent = '¡Copiado!';
+                document.body.appendChild(tooltip);
+                
+                // Position tooltip near the clicked element
+                const rect = event.target.getBoundingClientRect();
+                tooltip.style.top = `${rect.top - 30}px`;
+                tooltip.style.left = `${rect.left + (rect.width / 2) - 30}px`;
+                
+                // Remove tooltip after 2 seconds
+                setTimeout(() => {
+                    tooltip.remove();
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+
+        // Add click event listeners to all email links
+        document.addEventListener('DOMContentLoaded', () => {
+            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+            emailLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const email = link.href.replace('mailto:', '');
+                    copyToClipboard(email);
+                });
+            });
+        });
+    </script>
     <script src="../script.js"></script>
 </body>
 </html>
+

@@ -467,93 +467,80 @@ style.innerHTML = `
     50% { border-color: #8CCBD5 }
 }
 `;
-// Animación para la sección de la aplicación móvil
-const appSection = document.querySelector('.app-showcase');
-if (appSection) {
-    // Animación para el teléfono
-    const phoneFrame = document.querySelector('.phone-frame');
-    if (phoneFrame) {
-        window.addEventListener('scroll', function() {
-            const phonePosition = phoneFrame.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (phonePosition < screenPosition) {
-                phoneFrame.style.transform = 'rotate(0deg) perspective(800px) rotateY(0deg)';
-                phoneFrame.style.opacity = '1';
-            }
+
+// Lightbox functionality
+function initLightbox() {
+    const galleryItems = document.querySelectorAll('.gallery-image');
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <img src="" alt="">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">&lt;</button>
+            <button class="lightbox-next">&gt;</button>
+        </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    let currentIndex = 0;
+    const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
         });
+    });
+
+    function updateLightbox() {
+        const lightboxImg = lightbox.querySelector('img');
+        lightboxImg.src = images[currentIndex];
     }
-    
-    // Animación para el slider de potencia
-    const sliderHandle = document.querySelector('.slider-handle');
-    const sliderFill = document.querySelector('.slider-fill');
-    const sliderValue = document.querySelector('.slider-value');
-    
-    if (sliderHandle && sliderFill && sliderValue) {
-        let isDragging = false;
-        
-        sliderHandle.addEventListener('mousedown', function(e) {
-            isDragging = true;
-            e.preventDefault();
-        });
-        
-        document.addEventListener('mouseup', function() {
-            isDragging = false;
-        });
-        
-        document.addEventListener('mousemove', function(e) {
-            if (isDragging) {
-                const sliderTrack = document.querySelector('.slider-track');
-                const trackRect = sliderTrack.getBoundingClientRect();
-                let position = (e.clientX - trackRect.left) / trackRect.width;
-                
-                // Limitar entre 0 y 1
-                position = Math.max(0, Math.min(1, position));
-                
-                // Actualizar posición del handle y fill
-                sliderHandle.style.left = position * 100 + '%';
-                sliderFill.style.width = position * 100 + '%';
-                
-                // Actualizar valor
-                const value = Math.round(position * 100);
-                sliderValue.textContent = value + '%';
-            }
-        });
-    }
-    
-    // Animación para los modos
-    const modes = document.querySelectorAll('.mode');
-    if (modes.length > 0) {
-        modes.forEach(mode => {
-            mode.addEventListener('click', function() {
-                // Quitar clase activa de todos los modos
-                modes.forEach(m => m.classList.remove('active'));
-                
-                // Añadir clase activa al modo clickeado
-                this.classList.add('active');
-            });
-        });
-    }
-    
-    // Crear partículas para la sección de la app
-    const appParticles = document.getElementById('appParticles');
-    if (appParticles) {
-        // Crear partículas
-        for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.position = 'absolute';
-            particle.style.width = Math.random() * 5 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.backgroundColor = 'rgba(255, 255, 255, ' + (Math.random() * 0.3) + ')';
-            particle.style.borderRadius = '50%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animation = 'float ' + (Math.random() * 10 + 5) + 's linear infinite';
-            particle.style.opacity = Math.random() * 0.5;
-            
-            appParticles.appendChild(particle);
+
+    lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.querySelector('.lightbox-prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightbox();
+    });
+
+    lightbox.querySelector('.lightbox-next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLightbox();
+    });
+
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
         }
-    }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+
+        switch (e.key) {
+            case 'Escape':
+                lightbox.classList.remove('active');
+                break;
+            case 'ArrowLeft':
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateLightbox();
+                break;
+            case 'ArrowRight':
+                currentIndex = (currentIndex + 1) % images.length;
+                updateLightbox();
+                break;
+        }
+    });
 }
+
+// Initialize lightbox when DOM is loaded
+document.addEventListener('DOMContentLoaded', initLightbox);
+
 document.head.appendChild(style);
