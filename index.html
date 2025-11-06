@@ -13,7 +13,12 @@
     
     <!-- Zoom específico solo para index.html en desktop -->
     <style>
-        @media (min-width: 1001px) {
+        @media (min-width: 1000px) {
+            body {
+                zoom: 67%;
+            }
+        }
+        @media (max-width: 700px) {
             body {
                 zoom: 67%;
             }
@@ -37,7 +42,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="index.html">
-                        <img src="med/1.PNG" alt="Proyecto Aquiles Logo">
+                        <img src="med/1.png" alt="Proyecto Aquiles Logo">
                     </a>
                 </div>
 
@@ -366,7 +371,7 @@
                                 <li><i class="fas fa-check-circle"></i> Diagnósticos automáticos</li>
                             </ul>
                             <div class="app-buttons">
-                                <a href="#" class="google-play-button">
+                                <a href="https://drive.google.com/drive/folders/1Z1zS6MrvtOG-DlGeu_qQDY4mIO2Ay2mm?usp=sharing" class="google-play-button">
                                     <div class="play-button-content">
                                         <div class="play-logo"><i class="fab fa-google-play"></i></div>
                                         <div class="play-text">
@@ -377,18 +382,53 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="app-mockup">
+                        <!-- <div class="app-mockup">
                             <div class="phone-frame">
                                 <div class="phone-screen">
                                     <div class="app-screen" id="appScreen">
-                                        <img src="med/pagi.png" alt="diex" class ="app-screenshot">
+                                        <img src="med/PAG.png" class="app-screenshot">
                                     </div>
                                 </div>
                                 <div class="phone-button"></div>
                             </div>
+                        </div> -->
+                        
+                        <!-- Iphone 16 -->
+                        <div class="iphone-container">
+                            <!-- Dynamic Island -->
+                            <div class="dynamic-island"></div>
+                            
+                            <!-- Botones laterales -->
+                            <div class="side-button volume-up"></div>
+                            <div class="side-button volume-down"></div>
+                            <div class="side-button power-button"></div>
+                            
+                            <!-- Pantalla con tu imagen -->
+                            <div class="screen">
+                                <img src="med/PAG.png" alt="Exoesqueleto X1 App">
+                            </div>
                         </div>
+
+                        
                     </div>
                 </div>
+
+
+
+
+                <style>
+                
+                </style>
+
+
+
+
+
+
+
+
+
+
                 <!-- <div class="app-particles" id="appParticles"></div> -->
                 <div class="app-buttons-mobile">
                     <a href="#" class="google-play-button">
@@ -450,7 +490,7 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <div class="footer-logo">
-                        <img src="med/1.PNG" alt="Proyecto Aquiles Logo">
+                        <img src="med/1.png" alt="Proyecto Aquiles Logo">
                         <span>Proyecto Aquiles</span>
                     </div>
                     

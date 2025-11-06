@@ -2140,6 +2140,12 @@ img {
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease;
+  margin-left: -80px; /* Adjust this value to move logo left */
+}
+@media(max-width:1000px){
+  .logo{
+    margin-left: 0px;
+  }
 }
 
 .logo:hover {
@@ -2381,8 +2387,8 @@ img {
 }
 
 .exo-image {
-  max-width: 120%;
-  height: 150%;
+  max-width: 80%;
+  height: 80%;
   filter: drop-shadow(0 0 15px rgba(140, 203, 213, 0.3));
   opacity: 0;
   transform: translateX(50px);
@@ -2932,15 +2938,18 @@ img {
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 10px 20px;
+  margin-bottom: 20px;
   border-radius: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(140, 203, 213, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(140, 203, 213, 0.4);
   border: 1px solid rgba(140, 203, 213, 0.2);
 }
 
 .google-play-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(140, 203, 213, 0.3);
+  transform: scale(1.05);
+  box-shadow: 
+  0 10px 25px rgba(0, 0, 0, 0.4),
+  0 0 15px rgba(140, 203, 213, 0.3);
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -2983,8 +2992,9 @@ img {
     margin-right: 0;
   }
 }
+/* Iphone Viejo */
 
-.phone-frame {
+/* .phone-frame {
   width: 280px;
   height: 590px;
   background-color: #000;
@@ -2993,7 +3003,7 @@ img {
   padding-top: 60px;
   position: relative;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(140, 203, 213, 0.3);
-  border: 1px solid #444;
+  border: 5px solid #444;
   overflow: hidden;
   transform: perspective(800px) rotateY(0deg);
   transition: all 0.5s ease;
@@ -3048,10 +3058,10 @@ img {
 
 .app-screenshot {
   object-fit: fill;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
-
-.app-particles {
+*/
+/* .app-particles {
   position: absolute;
   top: 0;
   left: 0;
@@ -3059,9 +3069,122 @@ img {
   height: 100%;
   overflow: hidden;
   z-index: 1;
+}  */
+
+/* Iphone 16 */
+.iphone-container {
+  position: relative;
+  width: 400px;
+  height: 820px;
+  background: linear-gradient(145deg, #000, #232323);
+  border-radius: 55px;
+  padding: 12px;
+  margin-right: 70px;
+  box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.5),
+      0 0 0 6px rgba(255, 255, 255, 0.1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+@media (max-width: 1000px) {
+  .app-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .app-info {
+    order: 1;
+    margin-bottom: 30px;
+    margin-top: 25px;
+    padding-right: 0;
+  }
+  
+  .iphone-container {
+    order: 2;
+    margin-right: 0;
+  }
+}
+
+/* Dynamic Island */
+.dynamic-island {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 37px;
+  background: #000;
+  border-radius: 25px;
+  z-index: 10;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8); */
+}
+
+/* Botones laterales */
+.side-button {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.volume-up {
+  left: -8px;
+  top: 120px;
+  width: 3px;
+  height: 80px;
+}
+
+.volume-down {
+  left: -8px;
+  top: 230px;
+  width: 3px;
+  height: 80px;
+}
+
+.power-button {
+  right: -8px;
+  top: 150px;
+  width: 3px;
+  height: 80px;
+}
+
+/* Pantalla */
+.screen {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 45px;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .iphone-container {
+      width: 320px;
+      height: 656px;
+      border-radius: 44px;
+      padding: 10px;
+  }
+
+  .dynamic-island {
+      width: 104px;
+      height: 30px;
+      top: 18px;
+  }
+
+  .screen {
+      border-radius: 36px;
+  }
 }
 
 /* Services Section */
+
 .services {
   padding: 100px 0;
   position: relative;
@@ -3563,12 +3686,18 @@ img {
 
   .logo {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    transition: transform 0.5s ease;
+    justify-content: center;
+    /* padding-left: 30px; */
+  }
+
+  .logo:hover {
+    transform: scale(1.1);
   }
 
   .logo img {
-    height: 40px;
+    height: 55px;
+    justify-content: center;
   }
 
   .nav-left,
@@ -3609,12 +3738,21 @@ img {
   .app-subtitle {
     font-size: 1.5rem;
   }
-
-  .hero-image {
-    display: block !important;
-    width: 100%;
-    max-width: 300px;
-    margin-top: 20px;
+  /* @media (min-width:1000px){
+    .hero-image {
+      display: block !important;
+      
+      width: 200px;
+      margin-top: 20px;
+    }
+  } */
+  @media (min-width:700px) and (max-width:1000px){
+    .hero-image {
+      display: block !important;
+      width: 100%;
+      max-width: 300px;
+      /* margin-top: 20px; */
+    }
   }
 
   .app-showcase {
@@ -3632,6 +3770,10 @@ img {
   }
   
   .app-mockup {
+    order: 2;
+  }
+  
+  .iphone-container {
     order: 2;
   }
   
@@ -4077,7 +4219,7 @@ img {
   left: 15px;
   width: 60px;
   height: 60px;
-  background-color: rgba(140, 203, 213, 0.1);
+  /* background-color: rgba(140, 203, 213, 0.1); */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -4086,7 +4228,7 @@ img {
   color: var(--color-neon-teal);
   font-size: 20px;
   flex-shrink: 0;
-  box-shadow: 0 0 15px rgba(140, 203, 213, 0.3);
+  /* box-shadow: 0 0 15px rgba(140, 203, 213, 0.3); */
   transition: all 0.3s ease;
   z-index: 1;
 }
@@ -4103,11 +4245,11 @@ img {
   align-items: center;
   justify-content: center;
   margin-right: 20px;
-  color: var(--color-neon-teal);
+  /* color: var(--color-neon-teal); */
   font-size: 20px;
   flex-shrink: 0;
   /* box-shadow:  0px 0px 15px rgba(140, 203, 213, 0.4); */
-  filter: drop-shadow(0 0 1px rgba(140, 203, 213, 0.3));
+  /* filter: drop-shadow(0 0 1px rgba(140, 203, 213, 0.3)); */
   transition: all 0.3s ease;
   z-index: 1;
 }
@@ -4118,20 +4260,20 @@ img {
   height: 100%;
   object-fit: contain;
   border-radius: 8%;
-  filter: drop-shadow(0 0 1px rgba(140, 203, 213, 0.3));
+  filter: drop-shadow(0 0 10px rgba(140, 203, 213, 0.6));
   transition: all 0.3s ease;
 }
 
 /* Hover effect para la imagen rectangular */
-.award-item:hover .award-iconimpa {
-  background-color: rgba(140, 203, 213, 0.1);
+.award-item:hover .award-iconimpa img{
+  /* background-color: rgba(140, 203, 213, 0.1); */
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(140, 203, 213, 0.3);
+  /* box-shadow: 0 0 20px rgba(140, 203, 213, 0.3); */
 }
 
 .award-item:hover .award-iconimpa img {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(140, 203, 213, 0.6));
+  filter: drop-shadow(0 0 7px rgba(140, 203, 213, 1.2));
 }
 
 
@@ -4209,8 +4351,8 @@ img {
   max-height: 300px;
   height: auto;
   border-radius: 10px;
-  filter: drop-shadow(0 2px 8px rgba(140, 203, 213, 0.2));
-  box-shadow: 0 10px 25px rgba(140, 203, 213, 0.4);
+  filter: drop-shadow(0 0px 8px rgba(140, 203, 213, 0.2));
+  box-shadow: 0 0px 25px rgba(140, 203, 213, 0.3);
   border: 1px solid rgba(140, 203, 213, 0.2);
   cursor: pointer;
   border-radius: 2rem 2rem 2rem 2rem;
@@ -4311,7 +4453,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 0 1px rgba(140, 203, 213, 0.3));
+    filter: drop-shadow(0 0 6px rgba(140, 203, 213, 0.7));
   }
 
   /* Estilos para award-image en mobile */
@@ -4320,7 +4462,7 @@ img {
     max-height: 250px; /* Ligeramente más pequeño en mobile */
     width: auto;
     height: auto;
-    filter: drop-shadow(0 2px 8px rgba(140, 203, 213, 0.2));
+    filter: drop-shadow(0 0px 8px rgba(140, 203, 213, 0.2));
   }
 
   .award-title-indent {
@@ -4380,10 +4522,9 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding-right: 100px;
-  padding-left: 100px;
+  /* padding-right: 100px;
+  padding-left: 100px; */
 }
-
 .cert-item {
   background-color: rgba(16, 32, 48, 0.7);
   padding: 30px;
@@ -4400,8 +4541,29 @@ img {
 }
 
 .cert-icon {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
+  /* background-color: rgba(140, 203, 213, 0.1); */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--color-neon-teal);
+  font-size: 24px;
+  /* box-shadow: 0 0 15px rgba(140, 203, 213, 0.3); */
+  transition: all 0.3s ease;
+}
+
+.cert-item:hover .cert-icon {
+  background-color: rgba(140, 203, 213, 0.2);
+  transform: rotateY(360deg);
+  box-shadow: 0 0 20px rgba(140, 203, 213, 0.5);
+}
+
+.cert-icon1 {
+  width: 100px;
+  height: 100px;
   background-color: rgba(140, 203, 213, 0.1);
   border-radius: 50%;
   display: flex;
@@ -4414,19 +4576,13 @@ img {
   transition: all 0.3s ease;
 }
 
-.cert-item:hover .cert-icon {
-  background-color: rgba(140, 203, 213, 0.2);
-  transform: rotateY(360deg);
-  box-shadow: 0 0 20px rgba(140, 203, 213, 0.5);
-}
-
 /* Estilos para la imagen dentro del cert-icon */
 .cert-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
   border-radius: 8%;
-  filter: drop-shadow(0 0 1px rgba(140, 203, 213, 0.3));
+  filter: drop-shadow(0 0 20px rgba(140, 203, 213, 0.4));
   transition: all 0.3s ease;
 }
 
